@@ -12,7 +12,7 @@ Revisar también si el nombre y apellidos son correctos.
 | Daniel | Casado Villanueva | | | | |
 | Ramón | Castro Casariego | | | | |
 | Rafael | Doña Martínez | | | | |
-| Gerard | Funosas | | | | |
+| Gerard | Funosas i Planas | gerard_gfunosas#7596 | gfunosas | SI | SI |
 | Edin | Guermas Argiles | | | | |
 | Osiris Javier | Gutierrez Gomez | | | | |
 | Angel | Ivorra | Angel Ivorra | aivorraticomsa | SI | SI |
