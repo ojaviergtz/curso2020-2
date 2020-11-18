@@ -19,8 +19,9 @@ Revisar también si el nombre y apellidos son correctos.
 | Alejandro | López | | | | |
 | Enrique | López de Roda López | | | | |
 | Salvador | Madrid | | | | |
-| Pablo | Moreno | | | | |
+| Pablo | Moreno | Pablo Moreno | pmm2207 | SI | SI |
 | Jesús Jorge | Muñoz |Jesús JM |jesusjmclue |SI |SI |
+| Jesús Jorge | Muñoz | | | | |
 | Claudio | Piras | | | | |
 | Alvaro | Pita Martin | | | | |
 | César | Sahagún | | | | |
