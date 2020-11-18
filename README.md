@@ -8,7 +8,7 @@ Revisar también si el nombre y apellidos son correctos.
 | -- | -- | -- | -- | -- | -- |
 | Luis Miguel | Arpón | | | | |
 | Manuel | Barbadillo | | | | |
-| Juan Manuel | Beltrán Osa | | | | |
+| Juan Manuel | Beltrán Osa | Juanma_Tyrantbit | Tyrantbit | SI | SI |
 | Daniel | Casado Villanueva | | | | |
 | Ramón | Castro Casariego | | | | |
 | Rafael | Doña Martínez | | | | |
