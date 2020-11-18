@@ -11,7 +11,7 @@ Revisar también si el nombre y apellidos son correctos.
 | Juan Manuel | Beltrán Osa | | | | |
 | Daniel | Casado Villanueva | | | | |
 | Ramón | Castro Casariego | | | | |
-| Rafael | Doña Martínez | | | | |
+| Rafael | Doña Martínez | rafadm98#0934 | rafadm98 | SI | SI |
 | Gerard | Funosas i Planas | gerard_gfunosas#7596 | gfunosas | SI | SI |
 | Edin | Guermas Argiles | | | | |
 | Osiris Javier | Gutierrez Gomez | | | | |
