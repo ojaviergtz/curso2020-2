@@ -1,6 +1,6 @@
 # curso2020-2
 
-| Nombre | Apellidos | Nick Discord | github | Instalación (SI/NO) |
+| Nombre | Apellidos | Discord | Github | Instalación (SI/NO) |
 | -- | -- | -- | -- | -- |
 | Luis Miguel | Arpón | | | | 
 | Manuel | Barbadillo | | | |
