@@ -20,7 +20,7 @@ Revisar también si el nombre y apellidos son correctos.
 | Enrique | López de Roda López | | | | |
 | Salvador | Madrid | | | | |
 | Pablo | Moreno | | | | |
-| Jesús Jorge | Muñoz | | | | |
+| Jesús Jorge | Muñoz |Jesús JM |jesusjmclue |SI |SI |
 | Claudio | Piras | | | | |
 | Alvaro | Pita Martin | | | | |
 | César | Sahagún | | | | |
