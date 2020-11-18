@@ -6,7 +6,7 @@ Revisar también si el nombre y apellidos son correctos.
 
 | Nombre | Apellidos | Discord | Github | Instalación (SI/NO) |
 | -- | -- | -- | -- | -- |
-| Luis Miguel | Arpón | | | | 
+| Luis Miguel | Arpón | | | |
 | Manuel | Barbadillo | | | |
 | Juan Manuel | Beltrán Osa | | | |   
 | Daniel | Casado Villanueva | | | |
