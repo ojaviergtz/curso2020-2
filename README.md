@@ -11,7 +11,7 @@
 | Gerard | Funosas | | | |
 | Edin | Guermas Argiles | | | |
 | Osiris Javier | Gutierrez Gomez | | | |
-| Angel | Ivorra | | | |
+| Angel | Ivorra | Angel Ivorra | aivorraticomsa | SI |
 | Alejandro | López | | | |
 | Enrique | López de Roda López | | | |
 | Salvador | Madrid | | | |
