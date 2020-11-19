@@ -6,9 +6,9 @@ Revisar también si el nombre y apellidos son correctos.
 
 | Nombre | Apellidos | Discord | Github | Instalación (SI/NO) | Git (SI/NO) |
 | -- | -- | -- | -- | -- | -- |
-| Luis Miguel | Arpón | | | | |
+| Luis Miguel | Arpón | LuisMiguel_Hergar#9485 | luismiguelarpon | SI | SI |
 | Manuel | Barbadillo | | | | |
-| Juan Manuel | Beltrán Osa | | | | |
+| Juan Manuel | Beltrán Osa | Juanma_Tyrantbit | Tyrantbit | SI | SI |
 | Daniel | Casado Villanueva | | | | |
 | Ramón | Castro Casariego | | | | |
 | Rafael | Doña Martínez | rafadm98#0934 | rafadm98 | SI | SI |
@@ -18,7 +18,7 @@ Revisar también si el nombre y apellidos son correctos.
 | Angel | Ivorra | Angel Ivorra | aivorraticomsa | SI | SI |
 | Alejandro | López | | | | |
 | Enrique | López de Roda López | | | | |
-| Salvador | Madrid | | | | |
+| Salvador | Madrid | Salva Madrid | smad2 | SI | SI |
 | Pablo | Moreno | Pablo Moreno | pmm2207 | SI | SI |
 | Jesús Jorge | Muñoz |Jesús JM |jesusjmclue |SI |SI |
 | Jesús Jorge | Muñoz | | | | |
@@ -26,4 +26,4 @@ Revisar también si el nombre y apellidos son correctos.
 | Alvaro | Pita Martin | | | | |
 | César | Sahagún | | | | |
 | José Ramón | Santos Insua | | | | |
-| Betina | Solana | | | | |
+| Betina | Solana | Betina#6482 | betinasolana | SI | SI |
