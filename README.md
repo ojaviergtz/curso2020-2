@@ -26,4 +26,4 @@ Revisar también si el nombre y apellidos son correctos.
 | Alvaro | Pita Martin | | | | |
 | César | Sahagún | | | | |
 | José Ramón | Santos Insua | | | | |
-| Betina | Solana | | | | |
+| Betina | Solana | Betina#6482 | betinasolana | SI | SI |
