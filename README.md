@@ -27,3 +27,5 @@ Revisar también si el nombre y apellidos son correctos.
 | César | Sahagún | | | | |
 | José Ramón | Santos Insua | | | | |
 | Betina | Solana | Betina#6482 | betinasolana | SI | SI |
+
+La semana que viene comenzamos con el desarrollo del primer módulo.
