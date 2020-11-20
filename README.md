@@ -24,6 +24,6 @@ Revisar también si el nombre y apellidos son correctos.
 | Jesús Jorge | Muñoz | | | | |
 | Claudio | Piras | | | | |
 | Alvaro | Pita Martin | | | | |
-| César | Sahagún | | | | |
+| César | Sahagún | César#1887 | cesaraeodoo | SI | SI |
 | José Ramón | Santos Insua | | | | |
 | Betina | Solana | Betina#6482 | betinasolana | SI | SI |
