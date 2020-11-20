@@ -14,7 +14,7 @@ Revisar también si el nombre y apellidos son correctos.
 | Rafael | Doña Martínez | rafadm98#0934 | rafadm98 | SI | SI |
 | Gerard | Funosas i Planas | gerard_gfunosas#7596 | gfunosas | SI | SI |
 | Edin | Guermas Argiles | | | | |
-| Osiris Javier | Gutierrez Gomez | | | | |
+| Osiris Javier | Gutierrez Gomez | Osiris#0783 | ojaviergtz | SI | SI |
 | Angel | Ivorra | Angel Ivorra | aivorraticomsa | SI | SI |
 | Alejandro | López | | | | |
 | Enrique | López de Roda López | | | | |
