@@ -16,7 +16,7 @@ Revisar también si el nombre y apellidos son correctos.
 | Edin | Guermas Argiles | | | | |
 | Osiris Javier | Gutierrez Gomez | | | | |
 | Angel | Ivorra | Angel Ivorra | aivorraticomsa | SI | SI |
-| Alejandro | López | | | | |
+| Alejandro | López | alejandrolopez#5457 | alejandrobyte | SI | SI |
 | Enrique | López de Roda López | | | | |
 | Salvador | Madrid | Salva Madrid | smad2 | SI | SI |
 | Pablo | Moreno | Pablo Moreno | pmm2207 | SI | SI |
