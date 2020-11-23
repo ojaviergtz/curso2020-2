@@ -25,6 +25,6 @@ Revisar también si el nombre y apellidos son correctos.
 | Claudio | Piras | | | | |
 | Alvaro | Pita Martin | | | | |
 | César | Sahagún | César#1887 | cesaraeodoo | SI | SI |
-| José Ramón | Santos Insua | | | | |
+| José Ramón | Santos Insua | Santos | santos-dev | SI | SI |
 | Betina | Solana | Betina#6482 | betinasolana | SI | SI |
 | Manuel Jesus | Benítez | Manu Benitez#8944 | mbenitezfhs | SI | SI |
