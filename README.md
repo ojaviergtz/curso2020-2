@@ -10,7 +10,7 @@ Revisar también si el nombre y apellidos son correctos.
 | Manuel | Barbadillo | | | | |
 | Juan Manuel | Beltrán Osa | Juanma_Tyrantbit | Tyrantbit | SI | SI |
 | Daniel | Casado Villanueva | | | | |
-| Ramón | Castro Casariego | | | | |
+| Ramón | Castro Casariego |Ramón|RCasariego|Si|Si|
 | Rafael | Doña Martínez | rafadm98#0934 | rafadm98 | SI | SI |
 | Gerard | Funosas i Planas | gerard_gfunosas#7596 | gfunosas | SI | SI |
 | Edin | Guermas Argiles | | | | |
