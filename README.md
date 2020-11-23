@@ -27,3 +27,4 @@ Revisar también si el nombre y apellidos son correctos.
 | César | Sahagún | César#1887 | cesaraeodoo | SI | SI |
 | José Ramón | Santos Insua | | | | |
 | Betina | Solana | Betina#6482 | betinasolana | SI | SI |
+| Manuel Jesus | Benítez | Manu Benitez#8944 | mbenitezfhs | SI | SI |
