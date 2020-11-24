@@ -18,4 +18,35 @@ Hacer el menú Helpesk/Helpdesk/Tickets
 
 ## Mejorar la vista de formulario y listado y añadir campos.
 
+Añadir los siguiente campos:
+- Estado [Nuevo, Asignado, En proceso, Pendiente, Resuelto, Cancelado]
+- Tiempo dedicado (en horas)
+- Asignado (tipo check)
+- Fecha límite
+- Acción correctiva (html)
+- Acción preventiva (html)
+
+En algún campo añadir un texto de ayuda indicando su funcionalidad, luego revisar que funciona.
+
+El campo Fecha:
+- hacer que por defecto sea la fecha de creación
+- hacer que sea solo de lectura
+
+El campo nombre hacer que sea obligatorio.
+
+En la vista tipo lista mostrar:
+- nombre, fecha, estado
+
+En la vista formulario:
+- poner un header con el status bar
+- nombre con h1 como en pedido de venta
+- dos columnas:
+  - fecha, fecha límite
+  - asignado, tiempo dedicado
+- solapas:
+  - Descripción
+  - Calidad
+    - Acción correctiva
+    - Acción preventiva
+
 ## Añadir método y traducir.
