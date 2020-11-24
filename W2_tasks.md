@@ -19,17 +19,18 @@ Hacer el menú Helpesk/Helpdesk/Tickets
 ## Mejorar la vista de formulario y listado y añadir campos.
 
 Añadir los siguiente campos:
-- Estado [Nuevo, Asignado, En proceso, Pendiente, Resuelto, Cancelado]
+- Estado [Nuevo, Asignado, En proceso, Pendiente, Resuelto, Cancelado], que por defecto sea Nuevo
 - Tiempo dedicado (en horas)
 - Asignado (tipo check)
 - Fecha límite
 - Acción correctiva (html)
 - Acción preventiva (html)
 
+El campo nombre que sea obligatorio
+
 En algún campo añadir un texto de ayuda indicando su funcionalidad, luego revisar que funciona.
 
-El campo Fecha:
-- hacer que por defecto sea la fecha de creación
+El campo Asignado:
 - hacer que sea solo de lectura
 
 El campo nombre hacer que sea obligatorio.
