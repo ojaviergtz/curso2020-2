@@ -21,7 +21,14 @@
         <field name="arch" type="xml">
             <form string="label">
                 <header >
+                    <button string="Assing" name="set_assigned" type="object" attrs="{'invisible': [('state', '!=', 'new')]}" />
+                    <button string="In progress" name="set_progress" type="object" states="assigned"/>
+                    <button string="Waiting" name="set_waiting" type="object" states="assigned,progress"/>
+                    <button string="Done" name="set_done" type="object" states="waiting,progress,assigned,new"/>
+                    <button string="Cancel" name="set_cancel" type="object" states="new,assigned,progress,waiting,done"/>
                     <field name="state" widget="statusbar" statusbar_visible="new,done"/>
+                    <!-- states="assigned,progress" -->
+                    <!-- class="oe_highlight" -->
                 </header>
                 <sheet>
                     <div>
@@ -35,6 +42,7 @@
                             <field name="date_due"/>
                         </group>
                         <group name="right">
+                            <field name="user_id"/>
                             <field name="assigned"/>
                             <field name="dedicated_time" widget="float_time"/>
                         </group>
