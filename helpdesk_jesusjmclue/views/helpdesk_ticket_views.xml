@@ -20,6 +20,11 @@
         <field name="arch" type="xml">
             <form string="Tickets">
                 <header>
+                    <button string="Assign" name="set_assigned" type="object" states="new"/>
+                    <button string="In Progress" name="set_progress" type="object" states="assigned"/>
+                    <button string="Waiting" name="set_waiting" type="object" states="assigned,progress"/>
+                    <button string="Done" name="set_done" type="object" class="oe_highlight" attrs="{'invisible':['|',('state','=','done'),('state','=','cancelled')]}"/>
+                    <button string="Cancel" name="set_cancel" type="object" attrs="{'invisible':[('state','=','cancelled')]}"/>
                     <field name="state" widget="statusbar" statusbar_visible="new,done"/>
                 </header>
                 <sheet>

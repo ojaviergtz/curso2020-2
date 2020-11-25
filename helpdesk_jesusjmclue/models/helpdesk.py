@@ -15,10 +15,10 @@ class HelpdeskTicket(models.Model):
 	state = fields.Selection(
 		[('new', 'New'),
 		 ('assigned', 'Assigned'),
-		 ('progress', 'Progress'),
+		 ('progress', 'In Progress'),
 		 ('waiting', 'Waiting'),
 		 ('done', 'Done'),
-		 ('cancel', 'Cancel')],
+		 ('cancelled', 'Cancelled')],
 		string = 'State',
 		default = 'new')
 
@@ -37,3 +37,32 @@ class HelpdeskTicket(models.Model):
 
 	preventive_action = fields.Html(
 		help = 'Detail of preventive action after this issue')
+
+	def set_assigned_multi(self):
+		for ticket in self:
+			ticket.set_assigned()
+
+	def set_assigned(self):
+		self.ensure_one()
+		self.write({
+			'assigned' : True,
+			'state' : 'assigned',
+		})
+
+	def set_progress(self):
+		self.ensure_one()
+		self.state = 'progress'
+
+	def set_waiting(self):
+		self.ensure_one()
+		self.state = 'waiting'
+
+	def set_done(self):
+		self.ensure_one()
+		self.state = 'done'
+
+	def set_cancel(self):
+		self.ensure_one()
+		self.state = 'cancelled'
+
+	
