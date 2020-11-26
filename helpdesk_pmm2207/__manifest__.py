@@ -4,6 +4,11 @@
 {
     "name": "Helpdesk Pablo Moreno",
     "summary": "Helpdesk and tickets",
+    'description': """
+Helpdesk and tickets
+====================
+This helpdesk system enables the creation of tickets for technical support 
+    """,
     "version": "13.0.1.0.0",
     "category": "Helpdesk",
     "website": "https://github.com/OCA/helpdesk",
