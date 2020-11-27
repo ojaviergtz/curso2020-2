@@ -6,8 +6,65 @@
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
-                    Click to create TIckets
+                    Click to create Tickets
             </p>
+        </field>
+    </record>
+
+    <record id="helpdesk_view_tree" model="ir.ui.view">
+        <field name="name">helpdesk.view.tree</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="helpdesk_view_form" model="ir.ui.view">
+        <field name="name">helpdesk.view.form</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="new,done" />
+                    </header>
+                    <div>
+                        <h1>
+                                Ticket -> <field name="name" />
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group name="right">
+                            <field name="date"/>
+                            <field name="due_date" />
+                        </group>
+                        <group name="left">
+                            <field name="assigned"/>
+                            <field name="due_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <group string="Description">
+                                <field name="description" nolabel="1"/>
+                            </group>
+                        </page>
+                        <page string="Quality">
+                            <group string="Corrective">
+                                <field name="corrective_action" nolabel="1"/>
+                            </group>
+                            <group string="Preventive">
+                                <field name="preventive_action" nolabel="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
         </field>
     </record>
 
