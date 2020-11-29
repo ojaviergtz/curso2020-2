@@ -17,7 +17,7 @@ class HelpdeskTicket (models.Model):
             [('new','New'),
              ('assigned','Assigned'),
              ('in_progress', 'In Progress'),
-             ('pendign', 'Pending'),
+             ('pending', 'Pending'),
              ('done', 'Done'),
              ('cancel','Cancel')],
             default = 'new')
@@ -35,3 +35,47 @@ class HelpdeskTicket (models.Model):
     preventive_action = fields.Html(
             help = 'To add actions to prevent the issue to happen')
 
+    user_id = fields.Many2one(
+            comodel_name = 'res.users',
+            string = 'Assigned to')
+
+    # Methods
+    def btn_assigned(self):
+        """"""
+        self.ensure_one()
+        self.write({
+            'state':'assigned',
+            'assigned': True,
+            'user_id': self.env.user.id
+            })
+
+    def btn_progress(self):
+        """  """
+        self.ensure_one()
+        self.state = 'in_progress'
+
+    def btn_pending(self):
+        """  """
+        self.ensure_one()
+        self.state = 'pending'
+
+    def btn_done(self):
+        """  """
+        self.ensure_one()
+        self.state = 'done'
+
+    def btn_cancel(self):
+        """  """
+        self.ensure_one()
+        self.state = 'cancel'
+
+
+##Añadir en el header los siguiente botones:
+##
+##    Asignar, cambia estado a asignado y pone a true el campo asignado, visible sólo con estado = nuevo
+##    En proceso, visible sólo con estado = asignado
+##    Pendiente, visible sólo con estado = en proceso o asignado
+##    Finalizar, visible en cualquier estado, menos cancelado y finalizado
+##    Cancelar, visible si no está cancelado
+##
+##Cada botón pondrá el objeto en el estado correspondiente.
