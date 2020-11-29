@@ -28,16 +28,27 @@
         <field name="model">helpdesk.ticket</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button string="Assign" type="object" name="btn_assigned"
+                        attrs="{'invisible':[('state', '!=', 'new')]}"/>
+                    <button string="In Progress" type="object" name="btn_progress"
+                        states="assigned,pending"/>
+                    <button string="Pending" type="object" name="btn_pending"
+                        states="in_progress"/>
+                    <button string="Done"  type="object" name="btn_done"
+                        states="in_progress"/>
+                    <button string="Cancel" type="object" name="btn_cancel"
+                        states="in_progress,assigned,pending"/>
+
+                    <field name="state" widget="statusbar" statusbar_visible="new,done" />
+                </header>
+
                 <sheet>
-                    <header>
-                        <field name="state" widget="statusbar" statusbar_visible="new,done" />
-                    </header>
                     <div>
                         <h1>
                                 Ticket -> <field name="name" />
                         </h1>
                     </div>
-
                     <group>
                         <group name="right">
                             <field name="date"/>
@@ -45,7 +56,8 @@
                         </group>
                         <group name="left">
                             <field name="assigned"/>
-                            <field name="due_date"/>
+                            <field name="user_id" />
+                            <field name="dedicated_time" widget="float_time"/>
                         </group>
                     </group>
                     <notebook>
