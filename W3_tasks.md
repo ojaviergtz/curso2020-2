@@ -6,7 +6,7 @@
 - [18] Metodos ORM
 
 Tareas a realizar:
-- crear modelo helpdesk.state, y sustituir el campo selection por un o2m
+- crear modelo helpdesk.state, y sustituir el campo selection por un m2o
 - crear un campo helpdesk.tag y añadir un m2m de etiquetas en el ticket.
 - añadir un m2m en helpdesk.tag para ver todas las tareas relacionadas con cada tag.
 - Hacer que el campo assigned sea calculado.
