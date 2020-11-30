@@ -8,7 +8,7 @@
       <tree string="Tickets">
         <field name="name"/>
         <field name="date"/>
-        <field name="state"/>
+        <field name="state_id"/>
       </tree>
     </field>
   </record>
@@ -19,7 +19,7 @@
     <field name="arch" type="xml">
       <form string="label">
         <header>
-          <field name="state" widget="statusbar" statusbar_visible="new,done"/>
+          <field name="state_id" widget="statusbar"/>
         </header>
         <sheet>
           <div>
@@ -33,17 +33,28 @@
               <field name="date_due"/>
             </group>
             <group name="right">
+              <field name="user_id"/>
               <field name="assigned"/>
+              <field name="assigned_qty"/>
               <field name="dedicated_time"/>
             </group>
           </group>
           <notebook>
             <page string="Main">
               <group string="Description">
-                <field name='description' nolabel="1"/>
+                <field name='description' nolabel="1" colspan='2'/>
+                <field name="tag_ids"  nolabel="1" colspan='2'/>
+                <field name="related_tag_is"  nolabel="1" colspan='2'/>
+                <field name="new_tag_name"/>
+                <button string="New tag"
+                  name="create_new_tag"
+                  type="object"/>
               </group>
             </page>
             <page string="Quality">
+              <group string="Actions">
+                <field name='action_ids' nolabel="1"/>
+              </group>
               <group string="Corrective Action">
                 <field name='corrective_action' nolabel="1"/>
               </group>
