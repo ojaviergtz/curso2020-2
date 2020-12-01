@@ -43,7 +43,7 @@ class HelpdeskTicket(models.Model):
         string='Date')
     state_id = fields.Many2one(
         comodel_name='helpdesk.ticket.state',
-        string='State')    
+        string='State')
     # state = fields.Selection(
     #     [('new', 'New'),
     #      ('assigned', 'Assigned'),
@@ -60,12 +60,12 @@ class HelpdeskTicket(models.Model):
         string='Assigned',
         compute='_compute_assinged',
         store=True)
-    
+
     assigned_qty = fields.Integer(
         string='Assigned Qty',
         compute='_compute_assigned_qty')
-    
-    
+
+
     user_id = fields.Many2one(
         comodel_name='res.users',
         string='Assigned to')
@@ -78,26 +78,27 @@ class HelpdeskTicket(models.Model):
     )
     preventive_action = fields.Html(
         help='Detail of preventive action after this issue')
-    
+
     action_ids = fields.One2many(
         comodel_name='helpdesk.ticket.action',
         inverse_name='ticket_id',
         string='Actions')
-    
+
     tag_ids = fields.Many2many(
         comodel_name='helpdesk.tag',
         relation='helpdesk_ticket_tag_rel',
         column1='ticket_id',
         column2='tag_id',
-        string='Tags')
+        string='Tags',
+        domain=[('name', 'like', 'a')])
     related_tag_is = fields.Many2many(
         comodel_name='helpdesk.tag',
         string='Related Tags',
         compute='_compute_related_tag_ids')
-    
+
     new_tag_name = fields.Char(
         string='New tag')
-    
+
     def create_new_tag(self):
         self.ensure_one()
         tag = self.env['helpdesk.tag'].create({
@@ -108,7 +109,7 @@ class HelpdeskTicket(models.Model):
         #     'tag_ids': [(4, tag.id, 0)]
         # })
         self.tag_ids = self.tag_ids + tag
-    
+
 
     @api.depends('user_id')
     def _compute_assinged(self):
@@ -123,8 +124,8 @@ class HelpdeskTicket(models.Model):
                 ('user_id', '=', user.id)
             ])
             record.assigned_qty = len(other_tickers)
-    
-    @api.depends('user_id')    
+
+    @api.depends('user_id')
     def _compute_related_tag_ids(self):
         for record in self:
             user = record.user_id
