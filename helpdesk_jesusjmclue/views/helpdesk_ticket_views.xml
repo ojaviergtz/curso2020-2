@@ -8,7 +8,7 @@
             <tree string="Tickets">
                 <field name="name"/>
                 <field name="date"/>
-                <field name="state"/>
+                <field name="state_id"/>
                 <field name="dedicated_time" widget="float_time"/>
             </tree>
         </field>
@@ -20,12 +20,7 @@
         <field name="arch" type="xml">
             <form string="Tickets">
                 <header>
-                    <button string="Assign" name="set_assigned" type="object" states="new"/>
-                    <button string="In Progress" name="set_progress" type="object" states="assigned"/>
-                    <button string="Waiting" name="set_waiting" type="object" states="assigned,progress"/>
-                    <button string="Done" name="set_done" type="object" class="oe_highlight" attrs="{'invisible':['|',('state','=','done'),('state','=','cancelled')]}"/>
-                    <button string="Cancel" name="set_cancel" type="object" attrs="{'invisible':[('state','=','cancelled')]}"/>
-                    <field name="state" widget="statusbar" statusbar_visible="new,done"/>
+                    <field name="state_id" widget="statusbar"/>
                 </header>
                 <sheet>
                     <div>
@@ -38,17 +33,26 @@
                         <name />
                         </group>
                         <group name="right">
+                            <field name="user_id"/>
                             <field name="assigned"/>
+                            <field name="assigned_qty"/>
                             <field name="dedicated_time" widget="float_time"/>
                         </group>
                     </group>
                     <notebook>
                         <page string="Main">
                             <group string="Description">
-                                <field name="description" nolabel="1"/>
+                                <field name="description" nolabel="1" colspan="2"/>
+                                <field name="tag_ids" nolabel="1" colspan="2"/>
+                                <field name="related_tag_ids" nolabel="1" colspan="2"/>
+                                <field name="new_tag_name"/>
+                                <button string="New tag" name="create_new_tag" type="object"/>
                             </group>
                         </page>
                         <page string="Quality">
+                            <group string="Actions">
+                                <field name="action_ids" nolabel="1"/>
+                            </group>
                             <group string="Corrective Action">
                                 <field name="corrective_action" nolabel="1"/>
                             </group>
