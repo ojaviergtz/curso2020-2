@@ -13,6 +13,8 @@ class HelpdeskTag(models.Model):
     _description= 'Helpdesk Tag'
 
     name = fields.Char()
+    ticket = fields.Boolean()
+    action = fields.Boolean()
     ticket_ids = fields.Many2many(
         comodel_name='helpdesk.ticket',
         relation='helpdesk_ticket_tag_rel',
@@ -108,6 +110,7 @@ class HelpdeskTicket(models.Model):
         # self.write({
         #     'tag_ids': [(4, tag.id, 0)]
         # })
+        import wdb; wdb.set_trace()
         self.tag_ids = self.tag_ids + tag
 
 
