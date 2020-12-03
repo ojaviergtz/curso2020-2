@@ -181,8 +181,8 @@ msgstr "En progreso"
 
 #. module: helpdesk_gfunosas
 #: model_terms:ir.ui.view,arch_db:helpdesk_gfunosas.ticket_form_view
-msgid "Quality"
-msgstr "Calidad"
+msgid "Actions"
+msgstr "Acciones"
 
 #. module: helpdesk_gfunosas
 #: model:ir.model.fields,field_description:helpdesk_gfunosas.field_helpdesk_ticket__state
