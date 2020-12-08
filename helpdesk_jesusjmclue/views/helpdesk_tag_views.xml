@@ -9,7 +9,9 @@
                     <sheet>
                         <group name="main">
                             <field name="name" />
-                            <field name="ticket_ids"/>
+                            <field name="ticket"/>
+                            <field name="action"/>
+                            <field name="ticket_ids" widget="many2many_tags" />
                         </group>
                     </sheet>
                 </form>
@@ -22,11 +24,36 @@
 	        <field name="arch" type="xml">
 	            <tree string="tag">
 	                <field name="name"/>
+                    <field name="ticket_ids" widget="many2many_tags" />
 	            </tree>
 	        </field>
 	    </record>
 
+        <record id="view_helpdesk_ticket_tag_simple_form" model="ir.ui.view">
+            <field name="name">view.helpdesk_ticket_tag_simple.form</field>
+            <field name="model">helpdesk.ticket.tag</field>
+            <field eval="20" name="priority"/>
+            <field name="arch" type="xml">
+                <form string="Tag">
+                    <sheet>
+                        <group name="main">
+                            <field name="name" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
+        <record id="view_helpdesk_ticket_tag_simple_tree" model="ir.ui.view">
+            <field name="name">view.helpdesk_ticket_tag_simple.tree</field>
+            <field name="model">helpdesk.ticket.tag</field>
+            <field eval="20" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="tag">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
 
 	    <record id="helpdesk_ticket_tag_action" model="ir.actions.act_window">
         <field name="name">Helpdesk Ticket Tag</field>

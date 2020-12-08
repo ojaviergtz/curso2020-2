@@ -12,6 +12,8 @@ class HelpdeskTicketTag(models.Model):
 	_description = "Helpdesk Ticket Tag"
 
 	name = fields.Char()
+	ticket = fields.Boolean()
+	action = fields.Boolean()
 	ticket_ids = fields.Many2many(
 		comodel_name = 'helpdesk.ticket',
 		relation = 'helpdesk_ticket_tag_rel',
@@ -97,7 +99,8 @@ class HelpdeskTicket(models.Model):
 		tag = self.env['helpdesk.ticket.tag'].create({
 			'name' : self.new_tag_name
 		})
-
+		# For debugging purposes
+		# import wdb; wdb.set_trace()
 		self.tag_ids += tag
 
 

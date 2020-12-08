@@ -33,7 +33,7 @@
                         <name />
                         </group>
                         <group name="right">
-                            <field name="user_id"/>
+                            <field name="user_id" options="{'no_create' : True, 'no_open' : True}" />
                             <field name="assigned"/>
                             <field name="assigned_qty"/>
                             <field name="dedicated_time" widget="float_time"/>
@@ -43,15 +43,27 @@
                         <page string="Main">
                             <group string="Description">
                                 <field name="description" nolabel="1" colspan="2"/>
-                                <field name="tag_ids" nolabel="1" colspan="2"/>
-                                <field name="related_tag_ids" nolabel="1" colspan="2"/>
+                                <field name="tag_ids" nolabel="1" colspan="2" options="{'no_create' : True}" widget="many2many_tags" domain="[('ticket','=', True)]"/>
+                                <field name="related_tag_ids" nolabel="1" colspan="2" context="{'tree_view_ref':'helpdesk_jesusjmclue.view_helpdesk_ticket_tag_simple_tree',
+'form_view_ref':'helpdesk_jesusjmclue.view_helpdesk_ticket_tag_simple_form'}"/>
                                 <field name="new_tag_name"/>
                                 <button string="New tag" name="create_new_tag" type="object"/>
                             </group>
                         </page>
                         <page string="Quality">
                             <group string="Actions">
-                                <field name="action_ids" nolabel="1"/>
+                                <field name="action_ids" nolabel="1" context="{'default_date' : date}">
+                                    <tree>
+                                        <field name="name" />
+                                        <field name="date" />
+                                    </tree>
+                                    <form>
+                                        <group name="action">
+                                            <field name="name" />
+                                            <field name="date" />
+                                        </group>
+                                    </form>
+                                </field>
                             </group>
                             <group string="Corrective Action">
                                 <field name="corrective_action" nolabel="1"/>
