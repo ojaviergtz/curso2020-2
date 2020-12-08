@@ -141,13 +141,3 @@ class HelpdeskTicket (models.Model):
         self.ensure_one()
         self.state = 'cancel'
 
-
-##Añadir en el header los siguiente botones:
-##
-##    Asignar, cambia estado a asignado y pone a true el campo asignado, visible sólo con estado = nuevo
-##    En proceso, visible sólo con estado = asignado
-##    Pendiente, visible sólo con estado = en proceso o asignado
-##    Finalizar, visible en cualquier estado, menos cancelado y finalizado
-##    Cancelar, visible si no está cancelado
-##
-##Cada botón pondrá el objeto en el estado correspondiente.
