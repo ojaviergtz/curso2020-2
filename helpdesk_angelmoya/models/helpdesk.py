@@ -140,3 +140,4 @@ class HelpdeskTicket(models.Model):
             self.update({
                 'related_tag_is': [(6,0,all_tag.ids)]
             })
+
