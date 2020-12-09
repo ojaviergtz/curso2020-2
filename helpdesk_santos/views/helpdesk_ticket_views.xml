@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-
   <record id="view_helpdesk_ticket_tree" model="ir.ui.view">
     <field name="name">view.helpdesk_ticket.tree</field>
     <field name="model">helpdesk.ticket</field>
@@ -20,13 +19,12 @@
     <field name="arch" type="xml">
       <form string="label">
         <header>
-          <field name="state_id" widget="statusbar"/>
+         <field name="state_id" widget="statusbar"/>
         </header>
         <sheet>
           <div>
             <h1>
-              Ticket #
-              <field name="name" class="oe_inline"/>
+              Ticket # <field name="name" class="oe_inline"/>
             </h1>
           </div>
           <group name="main">
@@ -36,8 +34,8 @@
             </group>
             <group name="right">
               <field name="user_id" options="{'no_create': True, 'no_open': True}"/>
-              <field name="assigned"/>
-              <field name="assigned_qty"/>
+              <field name="assigned"/> 
+              <field name="assigned_qty"/>                
               <field name="dedicated_time"/>
             </group>
           </group>
@@ -45,8 +43,8 @@
             <page string="Main">
               <group string="Description">
                 <field name='description' nolabel="1" colspan='2'/>
-                <field name="tag_ids" nolabel="1" colspan='2' options="{'no_quick_create': True}" widget="many2many_tags" domain="[('ticket', '=', True)]" context="{'default_ticket': True}"/>
-                <field name="related_tag_is" nolabel="1" colspan='2' context="{'tree_view_ref':'helpdesk_angelmoya.view_helpdesk_tag_simple_tree', 'form_view_ref':'helpdesk_angelmoya.view_helpdesk_tag_simple_form'}"/>
+                <field name="tag_ids" nolabel="1" colspan='2' options="{'no_create': True}" widget="many2many_tags"/>
+                <field name="related_tag_ids" nolabel="1" colspan='2' context="{'tree_view_ref':'helpdesk_santos.view_helpdesk_tag_simple_tree', 'form_view_ref':'helpdesk_santos.view_helpdesk_tag_simple_form'}"/>                
                 <field name="new_tag_name"/>
                 <button string="New tag" name="create_new_tag" type="object"/>
               </group>
@@ -58,6 +56,12 @@
                     <field name="name"/>
                     <field name="date"/>
                   </tree>
+                  <form>
+                    <group name="action">
+                      <field name="name"/>
+                      <field name="date"/>
+                    </group>
+                  </form>                  
                 </field>
               </group>
               <group string="Corrective Action">
@@ -80,13 +84,13 @@
       <search>
         <field name="name"/>
         <field name="user_id"/>
-        <separator/>
-        <filter name='assigned' string='Assigned' domain="[('assigned', '=', True)]"/>
-        <filter name='with_time' string='With time' domain="[('dedicated_time', '>', 0)]"/>
-        <filter name='assiggend_with_time' string='Assigned With time' domain="['&amp;', ('assigned', '=', True),('dedicated_time', '>', 0)]"/>
-        <filter name='assiggend_or_time' string='Assigned Or time' domain="['|', ('assigned', '=', True),('dedicated_time', '>', 0)]"/>
+        <filter name='asigned' string='Asigned' domain="[('assigned', '=', True)]"/>
+        <filter name='with_time' string='With Time' domain="[('dedicated_time', '>', 0)]"/>
+        <filter name='with_not_date_due' string='With Not Date Due' domain="[('date_due', '=', False)]"/>
         <separator/>
         <filter string="Assigned" name="type" context="{'group_by':'assigned'}"/>
+        <filter string="Date Due" name="type" context="{'group_by':'date_due'}"/>
+        <filter string="User" name="type" context="{'group_by':'user_id'}"/>
       </search>
     </field>
   </record>
@@ -97,18 +101,18 @@
     <field name="arch" type="xml">
       <pivot string="Tickets">
         <field name="user_id" type="row"/>
-        <field name="date" interval="month" type="col"/>
+        <field name="date"  interval="month" type="col"/>
         <field name="dedicated_time" type="measure" widget="float_time"/>
       </pivot>
     </field>
   </record>
 
-  <record id="view_helpdesk_ticket_graph" model="ir.ui.view">
+  <record id="helpdesk_ticket_graph" model="ir.ui.view">
     <field name="name">view.helpdesk_ticket.graph</field>
     <field name="model">helpdesk.ticket</field>
     <field name="arch" type="xml">
       <graph string="Tickets" type="pie">
-        <field name="user_id"/>
+        <field name="user_id" type="row"/>
         <field name="dedicated_time" type="measure" widget="float_time"/>
       </graph>
     </field>
@@ -118,18 +122,20 @@
     <field name="name">view.helpdesk_ticket.calendar</field>
     <field name="model">helpdesk.ticket</field>
     <field name="arch" type="xml">
-      <calendar string="Tickets" date_start="date" color="user_id" hide_time="true" event_limit="5">
+      <calendar string="Tickets" date_start="date" color="user_id" hide_time="True" event_limit="5">
         <field name="user_id"/>
-        <field name="dedicated_time"/>
+        <field name="name"/>
       </calendar>
     </field>
   </record>
 
+  <!-- helpdesk_ticket kanban view -->
   <record id="view_helpdesk_ticket_kanban" model="ir.ui.view">
     <field name="name">view.helpdesk_ticket.kanban</field>
     <field name="model">helpdesk.ticket</field>
     <field name="arch" type="xml">
       <kanban default_group_by="user_id" class="o_kanban_small_column o_opportunity_kanban" on_create="quick_create" archivable="false">
+       <!-- add your fields here -->
         <field name="user_id"/>
         <templates>
           <t t-name="kanban-box">
@@ -178,7 +184,6 @@
     <field name="name">Tickets</field>
     <field name="res_model">helpdesk.ticket</field>
     <field name="view_mode">kanban,tree,pivot,graph,calendar,form</field>
-
     <field name="help" type="html">
       <p class="oe_view_nocontent_create">
         Click to create a new Tickets.
@@ -186,9 +191,9 @@
     </field>
   </record>
 
-  <menuitem id="helpdest_root_menu" name="Helpdesk" sequence="10"/>
 
-  <menuitem id="helpdest_ticket_main_menu" name="Helpdesk" parent="helpdest_root_menu"  sequence="10"/>
+
+  <menuitem id="helpdest_root_menu" name="Helpdesk" sequence="10"/>
 
   <menuitem id="helpdest_ticket_main_menu" name="Helpdesk" parent="helpdest_root_menu" sequence="10"/>
 

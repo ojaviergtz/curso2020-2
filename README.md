@@ -17,7 +17,7 @@ Revisar también si el nombre y apellidos son correctos.
 | Osiris Javier | Gutierrez Gomez | Osiris#0783 | ojaviergtz | SI | SI |
 | Angel | Ivorra | Angel Ivorra | aivorraticomsa | SI | SI |
 | Alejandro | López | alejandrolopez#5457 | alejandrobyte | SI | SI |
-| Enrique | López de Roda López | | | | |
+| Enrique | López de Roda López | analistas cooffee#0043 | analistas cooffee | SI | SI |
 | Salvador | Madrid | Salva Madrid | smad2 | SI | SI |
 | Pablo | Moreno | Pablo Moreno | pmm2207 | SI | SI |
 | Jesús Jorge | Muñoz |Jesús JM |jesusjmclue |SI |SI |
