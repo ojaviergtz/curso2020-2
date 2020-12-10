@@ -83,6 +83,7 @@ class HelpdeskTicket (models.Model):
     tag_generator = fields.Char(
             string= 'Add new Tag')
 
+    color = fields.Integer('Color')
 
     # Methods
     def create_new_tag(self):

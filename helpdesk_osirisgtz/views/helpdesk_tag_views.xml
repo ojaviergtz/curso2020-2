@@ -34,7 +34,7 @@
         </field>
     </record>
 
-    <menuitem id="helpdesk_tag_menu" parent="helpdesk_main_menu"
+    <menuitem id="helpdesk_tag_menu" parent="helpdesk_ticket_main_menu"
         action="helpdesk_tag_action" sequence="20" />
 
 
