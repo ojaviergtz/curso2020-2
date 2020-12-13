@@ -3,7 +3,7 @@
 {
     "name": "Helpdesk Osiris Gutierrez",
     "summary": "Helpdesk module created for the AEODOO course 2020-2",
-    "description":"""
+    "description": """
     HELPDESK
     ===
     Detail description for the module developed in the __AEODOO course 2020-2__
@@ -16,14 +16,14 @@
     "license": "AGPL-3",
     "application": True,
     "installable": True,
-    "depends": [ "base", ],
+    "depends": ["base", ],
     "data": [
         "security/helpdesk_security.xml",
         "security/ir.model.access.csv",
         "views/helpdesk_ticket_views.xml",
         "views/helpdesk_tag_views.xml",
+        "views/helpdesk_action_views.xml",
     ],
     "demo": [
     ]
 }
-
