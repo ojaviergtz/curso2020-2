@@ -65,7 +65,9 @@
                         <page string="Description">
                             <group string="Description">
                                 <field name="description" nolabel="1" colspan='2'/>
-                                <field name="tag_ids" nolabel="1" colspan='2'/>
+                                <field name="tag_ids" nolabel="1" colspan='2'
+                                    context="{'tree_view_ref':'helpdesk_osirisgtz.helpdesk_tag_view_tree_related','form_view_ref': 'helpdesk_osirisgtz.helpdesk_tag_view_form_related'}"
+                                    options="{'no_create': True}"/>
                                 <field name="tag_generator" />
                                 <button string="Add new tag" type="object"
                                     name="create_new_tag"/>
@@ -74,10 +76,18 @@
                         <page string="Quality">
                             <group string="Actions">
                                 <field name="action_ids" nolabel="1">
-                                    <tree>
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="date"/>
+                                </tree>
+                                <!-- If the previous tree is editable we dont need to define
+                                    a form since we only can edit what we have in the tree-->
+                                <!--<form>
+                                    <group>
                                         <field name="name"/>
                                         <field name="date"/>
-                                    </tree>
+                                    </group>
+                                    </form>-->
                                 </field>
                             </group>
                             <group string="Corrective">

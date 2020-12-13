@@ -17,6 +17,8 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="ticket_ids" widget="many2many_tags"/>
+
             </tree>
         </field>
     </record>
@@ -28,9 +30,31 @@
             <form string='Tags'>
                 <group>
                     <field name="name"/>
-                    <field name="ticket_ids" />
+                    <field name="ticket_ids" widget="many2many_tags"/>
                 </group>
             </form>
+        </field>
+    </record>
+
+    <record id="helpdesk_tag_view_form_related" model="ir.ui.view">
+        <field name="name">helpdesk.tag.view.form.related</field>
+        <field name="model">helpdesk.tag</field>
+        <field name="arch" type="xml">
+            <form string='Tags'>
+                <group>
+                    <field name="name"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="helpdesk_tag_view_tree_related" model="ir.ui.view">
+        <field name="name">helpdesk.tag.view.tree.related</field>
+        <field name="model">helpdesk.tag</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
         </field>
     </record>
 
