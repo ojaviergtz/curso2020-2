@@ -14,7 +14,10 @@
   Crearemos un nuevo modelo crm.lead.ticket con herencia por delegación utilizando como base el lead y añadiendo los campos acciones correctivas y preventivas.
 
 
-34
-36
-38
-35
+34 Uso de context
+
+36 Mixin
+
+38 Test
+
+35 Informes
