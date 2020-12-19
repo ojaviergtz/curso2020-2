@@ -75,7 +75,7 @@
                         </page>
                         <page string="Quality">
                             <group string="Actions">
-                                <field name="action_ids" nolabel="1">
+                                <field name="action_ids" nolabel="1" context="{'default_date': date}">
                                 <tree editable="bottom">
                                     <field name="name"/>
                                     <field name="date"/>

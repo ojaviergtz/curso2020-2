@@ -1,4 +1,5 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError, UserError
 
 
 class HelpdeskTicketAction(models.Model):
@@ -27,12 +28,25 @@ class HelpdeskTags(models.Model):
             column2='ticket_id',
             string="Tickets")
 
+    # Methods
+    @api.model
+    def _clean_not_relateds(self):
+        """ """
+        tags = self.search([('ticket_ids', '=', False)])
+        tags.unlink()
+
 
 class HelpdeskTicket (models.Model):
     """   """
     _name = 'helpdesk.ticket'
     _description = "Helpdesk Ticket"
 
+    # Defaults
+    def _default_ticket_assign(self):
+        """  """
+        return self.env.user
+
+    # Fields
     name = fields.Char(
             'Name',
             required=True)
@@ -64,7 +78,8 @@ class HelpdeskTicket (models.Model):
 
     user_id = fields.Many2one(
             comodel_name='res.users',
-            string='Assigned to')
+            string='Assigned to',
+            default=_default_ticket_assign)
 
     action_ids = fields.One2many(
             comodel_name='helpdesk.ticket.action',
@@ -87,16 +102,47 @@ class HelpdeskTicket (models.Model):
     color = fields.Integer('Color')
 
     # Methods
+    @api.onchange('date')
+    def _onchange_date(self):
+        """  """
+        if self.date:
+            if self.date >= fields.Date.today() and self.due_date:
+                import datetime
+                self.due_date = self.date + datetime.timedelta(days=1)
+            else:
+                raise UserError(
+                        _("Date has to be grater or equal than %s "
+                            % fields.Date.today()))
+
+    @api.constrains('dedicated_time')
+    def _check_dedicated_time(self):
+        """  """
+        for ticket in self:
+            if ticket.dedicated_time < 0:
+                raise ValidationError(_("Dedicated time must be positive"))
+
     def create_new_tag(self):
         """   """
         self.ensure_one()
-        if self.tag_generator:
-            new_tag = self.env['helpdesk.tag'].create({
-                'name': self.tag_generator,
-                # 'ticket_ids':[(4,self.id,0)]
-                })
-            # self.write({'tag_ids': [(4,new_tag.id,0)]})
-            self.tag_ids += new_tag  # This works in this odoo version
+        # import pdb; pdb.set_trace()
+        action = self.env.ref(
+                "helpdesk_osirisgtz.helpdesk_tag_quick_action").read()[0]
+        action['context'] = {
+               'default_name': self.tag_generator,
+               'default_ticket_ids': [(6, 0, self.ids)]
+               }
+        action['views'] = [(self.env.ref(
+            "helpdesk_osirisgtz.helpdesk_tag_view_form_related").id,
+            'form')]
+        return action
+
+        # if self.tag_generator:
+        #     new_tag = self.env['helpdesk.tag'].create({
+        #         'name': self.tag_generator,
+        #        # 'ticket_ids':[(4,self.id,0)]
+        #         })
+        #    # self.write({'tag_ids': [(4,new_tag.id,0)]})
+        #     self.tag_ids += new_tag  # This works in this odoo version
 
     @api.depends('user_id')
     def _compute_tickets_for_user(self):

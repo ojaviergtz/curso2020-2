@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="helpdesk_tag_action" model="ir.actions.act_window">
-        <field name="name">Tags</field>
-        <field name="res_model">helpdesk.tag</field>
-        <field name="view_mode">tree,form</field>
-        <field name="help" type="html">
-            <p class="oe_view_nocontent_create">
-                    Click to create Tags
-            </p>
-        </field>
-    </record>
-
     <record id="helpdesk_tag_view_tree" model="ir.ui.view">
         <field name="name">helpdesk.tag.view.tree</field>
         <field name="model">helpdesk.tag</field>
@@ -57,6 +46,25 @@
             </tree>
         </field>
     </record>
+
+    <record id="helpdesk_tag_quick_action" model="ir.actions.act_window">
+        <field name="name">Tags Quick</field>
+        <field name="res_model">helpdesk.tag</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="helpdesk_tag_action" model="ir.actions.act_window">
+        <field name="name">Tags</field>
+        <field name="res_model">helpdesk.tag</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                    Click to create Tags
+            </p>
+        </field>
+    </record>
+
 
     <menuitem id="helpdesk_tag_menu" parent="helpdesk_ticket_main_menu"
         action="helpdesk_tag_action" sequence="20" />
