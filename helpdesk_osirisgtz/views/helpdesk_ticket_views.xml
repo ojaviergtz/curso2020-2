@@ -79,6 +79,7 @@
                                 <tree editable="bottom">
                                     <field name="name"/>
                                     <field name="date"/>
+                                    <field name="dedicated_time" widget="float_time"/>
                                 </tree>
                                 <!-- If the previous tree is editable we dont need to define
                                     a form since we only can edit what we have in the tree-->
@@ -192,7 +193,7 @@
                               </strong>
                           </div>
                           <ul>
-                              <li><field name="dedicated_time"/></li>
+                              <li><field name="dedicated_time" widget="float_time"/></li>
                               <li><field name="due_date"/></li>
                           </ul>
                           <div class="o_kanban_record_bottom">

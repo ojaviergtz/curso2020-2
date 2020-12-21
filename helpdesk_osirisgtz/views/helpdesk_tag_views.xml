@@ -17,6 +17,10 @@
         <field name="model">helpdesk.tag</field>
         <field name="arch" type="xml">
             <form string='Tags'>
+                <header>
+                    <button name="%(helpdesk_osirisgtz.action_view_wiz_ticket_from_tag)d" string="Create Ticket"
+                            type="action" class="btn-primary"/>
+                </header>
                 <group>
                     <field name="name"/>
                     <field name="ticket_ids" widget="many2many_tags"/>

@@ -10,6 +10,7 @@
                     <group>
                         <field name="name"/>
                         <field name="date"/>
+                        <field name="dedicated_time" widget="float_time"/>
                         <field name="ticket_id"/>
                     </group>
                 </sheet>

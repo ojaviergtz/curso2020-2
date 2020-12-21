@@ -6,3 +6,4 @@ helpdesk_ticket_action_manager,Helpdesk Ticket Action Manager,model_helpdesk_tic
 helpdesk_tag_user,Helpdesk Tag User,model_helpdesk_tag,res_groups_helpdesk_user,1,0,0,0
 helpdesk_tag_manager,Helpdesk Tag Manager,model_helpdesk_tag,res_groups_helpdesk_manager,1,1,1,1
 
+wizard_tag_manager,wizard tag manager,model_tickets_from_tag,res_groups_helpdesk_manager,1,1,1,1
