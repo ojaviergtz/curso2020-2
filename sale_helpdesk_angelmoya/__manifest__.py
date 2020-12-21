@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name":
-    "Helpdesk Angel Moya",
+    "Sale Helpdesk Angel Moya",
     "summary":
     "Helpesk and tickets",
     'description':
@@ -28,18 +28,10 @@ You could use this simplified accounting in case you work with an (external) acc
     True,
     "installable":
     True,
-    "depends": ["base", "mail"],
+    "depends": ["sale_management", "helpdesk_angelmoya"],
     "data": [
-        'security/helpdesk_security.xml',
-        'security/ir.model.access.csv',
-        'wizards/new_ticket_from_tag_views.xml',
-        'views/helpdesk_ticket_views.xml',
-        'views/helpdesk_tag_views.xml',
-        'views/helpdesk_action_views.xml',
-        'data/helpdesk_data.xml',
-        'reports/helpdesk_ticket_templates.xml',
+        "views/sale_views.xml", "views/product_views.xml",
+        "views/helpdesk_ticket_views.xml", "reports/sale_report_templates.xml"
     ],
-    'demo': [
-        'data/helpdesk_demo.xml',
-    ],
+    "demo": []
 }
