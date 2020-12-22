@@ -16,8 +16,19 @@
 
 34 Uso de context
 
+Añadir un campo contacto en el ticket, hacer que si creo un contacto desde el ticket se cree como tipo individual y el comercial sea el usuario asignado al ticket.
+
 36 Mixin
+
+Añadir mail.thread y mail.activity.mixin al ticket, en modelo y vista.
 
 38 Test
 
+Hacer un test para comprobar que si intento poner dedicated_time negativo me lanza una excepción.
+
 35 Informes
+
+- Crear un informe de impresión para el ticket. Que muestre nombre, fecha, cliente y listado de acciones, similar a pedido de venta.
+- Crear una tarjeta identificativa para el partner con la foto, crear paperformat de tarjeta y ver como el external layout añade la foto.
+- En el módulo sale_helpdesk_xxx modificar la impresión del pedido de venta para añádir un listado de los tickets relacionados.
+
