@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+
   <record id="view_helpdesk_ticket_tree" model="ir.ui.view">
     <field name="name">view.helpdesk_ticket.tree</field>
     <field name="model">helpdesk.ticket</field>
@@ -8,7 +9,7 @@
       <tree string="Tickets">
         <field name="name"/>
         <field name="date"/>
-        <field name="state_id"/>
+        <field name="state"/>
       </tree>
     </field>
   </record>
@@ -19,7 +20,7 @@
     <field name="arch" type="xml">
       <form string="label">
         <header>
-          <field name="state_id" widget="statusbar"/>
+          <field name="state" widget="statusbar"/>
         </header>
         <sheet>
           <div>
@@ -32,6 +33,7 @@
             <group name="left">
               <field name="date"/>
               <field name="date_due"/>
+              <field name="partner_id" context="{'default_company_type': 'person', 'default_user_id': user_id, 'default_search_type_person': True}"/>
             </group>
             <group name="right">
               <field name="user_id" options="{'no_create': True, 'no_open': True}"/>
@@ -56,6 +58,7 @@
                   <tree editable="bottom">
                     <field name="name"/>
                     <field name="date"/>
+                    <field name="dedicated_time"/>
                   </tree>
                 </field>
               </group>
@@ -68,6 +71,12 @@
             </page>
           </notebook>
         </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                    </div>
       </form>
     </field>
   </record>
@@ -177,6 +186,7 @@
     <field name="name">Tickets</field>
     <field name="res_model">helpdesk.ticket</field>
     <field name="view_mode">kanban,tree,pivot,graph,calendar,form</field>
+
     <field name="help" type="html">
       <p class="oe_view_nocontent_create">
         Click to create a new Tickets.
@@ -185,6 +195,8 @@
   </record>
 
   <menuitem id="helpdest_root_menu" name="Helpdesk" sequence="10"/>
+
+  <menuitem id="helpdest_ticket_main_menu" name="Helpdesk" parent="helpdest_root_menu"  sequence="10"/>
 
   <menuitem id="helpdest_ticket_main_menu" name="Helpdesk" parent="helpdest_root_menu" sequence="10"/>
 
