@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="helpdesk_sale_view_form" model="ir.ui.view">
+      <field name="name">helpdesk.sale.view.form</field>
+      <field name="model">helpdesk.ticket</field>
+      <field name="inherit_id" ref="helpdesk_osirisgtz.helpdesk_ticket_view_form"/>
+      <field name="arch" type="xml">
+          <field name="due_date" position="after">
+              <field name="sale_ids"/>
+          </field>
+
+      </field>
+    </record>
+</odoo>
+

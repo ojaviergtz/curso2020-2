@@ -43,6 +43,7 @@ class HelpdeskTicket (models.Model):
     """   """
     _name = 'helpdesk.ticket'
     _description = "Helpdesk Ticket"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     # Defaults
     def _default_ticket_assign(self):
@@ -108,6 +109,11 @@ class HelpdeskTicket (models.Model):
 
     color = fields.Integer('Color')
 
+    partner_id = fields.Many2one(
+            comodel_name='res.partner',
+            string="Customer"
+            )
+
     # Methods
     def _search_dedicated_time(self, operator, value):
         """  """
@@ -164,10 +170,12 @@ class HelpdeskTicket (models.Model):
         """   """
         self.ensure_one()
         # import pdb; pdb.set_trace()
+        tmp_tag_generator = self.tag_generator
+        self.tag_generator = False
         action = self.env.ref(
                 "helpdesk_osirisgtz.helpdesk_tag_quick_action").read()[0]
         action['context'] = {
-               'default_name': self.tag_generator,
+               'default_name': tmp_tag_generator,
                'default_ticket_ids': [(6, 0, self.ids)]
                }
         action['views'] = [(self.env.ref(

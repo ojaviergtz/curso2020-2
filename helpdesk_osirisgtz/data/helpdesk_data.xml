@@ -9,6 +9,10 @@
             <field name="interval_type">days</field>
             <field name="numbercall">-1</field>
         </record>
+
+        <record model="helpdesk.ticket" id="helpdesk_demo_1" >
+            <field name="name"> Ticket Demo 1</field>
+        </record>
     </data>
 
 </odoo>

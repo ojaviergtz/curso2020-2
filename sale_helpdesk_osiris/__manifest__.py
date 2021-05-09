@@ -1,10 +1,9 @@
-# Copyright 2020 AEODOO
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
-    "name": "Helpdesk Osiris Gutierrez",
-    "summary": "Helpdesk module created for the AEODOO course 2020-2",
+    "name": "Sale Helpdesk Osiris Gutierrez",
+    "summary": "Sale Helpdesk module created for the AEODOO course 2020-2",
     "description": """
-    HELPDESK
+    SALE HELPDESK
     ===
     Detail description for the module developed in the __AEODOO course 2020-2__
     """,
@@ -16,18 +15,12 @@
     "license": "AGPL-3",
     "application": True,
     "installable": True,
-    "depends": [
-        "base",
-        "mail",
-        ],
+    "depends": ["base",
+                "sale_management",
+                "helpdesk_osirisgtz", ],
     "data": [
-        "security/helpdesk_security.xml",
-        "security/ir.model.access.csv",
+        "views/sale_views.xml",
         "views/helpdesk_ticket_views.xml",
-        "wizards/tickets_from_tag.xml",
-        "views/helpdesk_tag_views.xml",
-        "views/helpdesk_action_views.xml",
-        "data/helpdesk_data.xml",
     ],
     "demo": [
     ]
